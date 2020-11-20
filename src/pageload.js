@@ -6,20 +6,24 @@ const pageload = () => {
     createHeader();
     createMenu();
     createParagraph('/dist/lang/homeparagraph.txt');
+    createFooter();
 }
 
 const createMenu = () => {
     const container = document.createElement('div');
     const menuList = document.createElement('ul');
-    container.setAttribute('id', 'nav')    
+    container.setAttribute('id', 'nav')
     const contact = document.createElement('li');
     const home = document.createElement('li');
     const menu = document.createElement('li');
-    
-    const menuItemGroup = {contact: contact, divider1: document.createElement('li'), home: home, divider2: document.createElement('li'), menu: menu};
-    
+
+    const menuItemGroup = {
+        contact: contact, divider1: document.createElement('li'),
+        home: home, divider2: document.createElement('li'), menu: menu
+    };
+
     for (const key in menuItemGroup) {
-        if (key == 'divider1'|| key == 'divider2') {
+        if (key == 'divider1' || key == 'divider2') {
             const div = document.createElement('div');
             const rule = document.createElement('div');
             div.setAttribute('class', 'vr-container');
@@ -48,6 +52,13 @@ const createHeader = () => {
     main.appendChild(container);
 }
 
+const createFooter = () => {
+    const container = document.createElement('div');
+    container.setAttribute('id', 'footer');
+    container.textContent = 'Made by Dean Pooler';
+    main.appendChild(container)
+}
+
 const createHorizontalRule = () => {
     const hr = document.createElement('hr');
     hr.setAttribute('class', 'hr');
@@ -57,7 +68,7 @@ const createHorizontalRule = () => {
 const createParagraph = (file) => {
     const content = document.createElement('div');
     const p = document.createElement('p');
-    p.setAttribute('class', 'text-content')
+    content.setAttribute('id', 'content');
     setText(file, p);
     content.appendChild(p)
     main.appendChild(content);
