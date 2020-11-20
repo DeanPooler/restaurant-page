@@ -1,9 +1,11 @@
+import setText from './setText';
 const content = document.getElementById('content');
 
 const pageload = () => {
-   createBanner();
-   createHeader();
-   createHorizontalRule();
+    createBanner();
+    createHeader();
+    createHorizontalRule();
+    createParagraph('/dist/lang/homeparagraph.txt');
 }
 
 const createBanner = () => {
@@ -31,6 +33,14 @@ const createHorizontalRule = () => {
     hr.style.background = '#333';
     hr.style.backgroundImage = 'linear-gradient(to right, #ccc, #333, #ccc';
     content.appendChild(hr);
+}
+
+const createParagraph = (file) => {
+    const p = document.createElement('p');
+    p.style.textAlign = 'center';
+    p.textContent = '';
+    setText(file, p);
+    content.appendChild(p);
 }
 
 export default pageload;
