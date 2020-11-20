@@ -1,1 +1,3 @@
-console.log('test message');
+import pageload from './pageload';
+
+pageload();
