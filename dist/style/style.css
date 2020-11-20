@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     margin-top: -110px;
+    background-image: linear-gradient(to right, #ccc, white, white, white, white, #ccc);;
 }
 
 #header {
@@ -10,6 +11,7 @@ body {
     font-family: 'Dancing Script', cursive;
     background-image: linear-gradient(to right, #87eaed, #2c878a, #2c878a, #2c878a, #87eaed);
     margin-bottom: -107px;
+    
 }
 
 #header h1 {
@@ -17,13 +19,37 @@ body {
     text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 1px 1px 0 #000;
 }
 
+#content {
+    padding-top: 40px;
+    margin: auto;
+    width: 60%;
+    
+}
+
+#footer {
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+    background-image: linear-gradient(to right, #666, #333, #333, #333, #666);;
+    border-top: 3px solid #222;
+    padding-top: 6px;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000
+}
+#content p {
+    text-align: center;
+    font-size: 25px;
+}
 .hr {
     border: 0;
     width: 60%;
     height: 1px;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
-
 }
 
 .text-content {
@@ -40,7 +66,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-image: linear-gradient(to right, #666, #333, #333, #333, #666);
     text-align: center;
 }
 
