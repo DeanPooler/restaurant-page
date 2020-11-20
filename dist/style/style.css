@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    margin-top: -110px;
+}
+
+#header {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Dancing Script', cursive;
+    background-image: linear-gradient(to right, gray, black, black, gray);
+    margin-bottom: -107px;
+}
+
+#header h1 {
+    color: whitesmoke;
+    text-shadow: -3px -3px 0 gray, 3px -3px 0 gray, -3px 3px 0 gray, 1px 1px 0 #000;
+    
+}
+
+.hr {
+    border: 0;
+    width: 60%;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+
+}
+
+.text-content {
+    text-align: center;
+}
