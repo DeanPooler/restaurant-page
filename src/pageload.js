@@ -1,11 +1,42 @@
 import setText from './setText';
-const content = document.getElementById('content');
+const main = document.getElementById('main');
 
 const pageload = () => {
     configureStyle();
     createHeader();
-    createHorizontalRule();
+    createMenu();
     createParagraph('/dist/lang/homeparagraph.txt');
+}
+
+const createMenu = () => {
+    const container = document.createElement('div');
+    const menuList = document.createElement('ul');
+    container.setAttribute('id', 'nav')    
+    const contact = document.createElement('li');
+    const home = document.createElement('li');
+    const menu = document.createElement('li');
+    
+    const menuItemGroup = {contact: contact, divider1: document.createElement('li'), home: home, divider2: document.createElement('li'), menu: menu};
+    
+    for (const key in menuItemGroup) {
+        if (key == 'divider1'|| key == 'divider2') {
+            const div = document.createElement('div');
+            const rule = document.createElement('div');
+            div.setAttribute('class', 'vr-container');
+            rule.setAttribute('class', 'vr');
+            div.appendChild(rule);
+            menuItemGroup[key].appendChild(div);
+            menuList.appendChild(menuItemGroup[key]);
+        } else {
+            const a = document.createElement('a');
+            a.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+            menuItemGroup[key].appendChild(a);
+            menuList.appendChild(menuItemGroup[key]);
+        }
+    }
+
+    container.appendChild(menuList);
+    main.appendChild(container);
 }
 
 const createHeader = () => {
@@ -14,20 +45,22 @@ const createHeader = () => {
     container.setAttribute('id', 'header');
     header.textContent = 'Soma\'s Kitchen';
     container.appendChild(header);
-    content.appendChild(container);
+    main.appendChild(container);
 }
 
 const createHorizontalRule = () => {
     const hr = document.createElement('hr');
     hr.setAttribute('class', 'hr');
-    content.appendChild(hr);
+    main.appendChild(hr);
 }
 
 const createParagraph = (file) => {
+    const content = document.createElement('div');
     const p = document.createElement('p');
     p.setAttribute('class', 'text-content')
     setText(file, p);
-    content.appendChild(p);
+    content.appendChild(p)
+    main.appendChild(content);
 }
 
 const configureStyle = () => {

@@ -8,14 +8,13 @@ body {
     text-align: center;
     font-size: 80px;
     font-family: 'Dancing Script', cursive;
-    background-image: linear-gradient(to right, gray, black, black, gray);
+    background-image: linear-gradient(to right, #87eaed, #2c878a, #2c878a, #2c878a, #87eaed);
     margin-bottom: -107px;
 }
 
 #header h1 {
     color: whitesmoke;
-    text-shadow: -3px -3px 0 gray, 3px -3px 0 gray, -3px 3px 0 gray, 1px 1px 0 #000;
-    
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 1px 1px 0 #000;
 }
 
 .hr {
@@ -29,4 +28,57 @@ body {
 
 .text-content {
     text-align: center;
+}
+
+#nav {
+    border-top: 3px solid #222;
+    border-bottom: 3px solid #222;
+
+}
+#nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+}
+
+
+#nav li {
+    display: inline-block;
+    background: #333;
+    border-left: 1px solid linear-gradient( #ccc, #333, #ccc);
+    
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000
+}
+
+#nav li a:hover {
+    background-color: #111;
+}
+
+.vr-container {
+    height: 30px;
+    position: relative;
+    padding-right: 2px;
+}
+
+.vr {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: linear-gradient(#333, black, #333);
+    height: 60px;
+    width: 2px;
 }
