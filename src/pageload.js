@@ -3,6 +3,7 @@ const content = document.getElementById('content');
 const pageload = () => {
    createBanner();
    createHeader();
+   createHorizontalRule();
 }
 
 const createBanner = () => {
@@ -22,5 +23,14 @@ const createHeader = () => {
     content.appendChild(header);
 }
 
+const createHorizontalRule = () => {
+    const hr = document.createElement('hr');
+    hr.style.border = '0';
+    hr.style.width = '60%'
+    hr.style.height = '1px';
+    hr.style.background = '#333';
+    hr.style.backgroundImage = 'linear-gradient(to right, #ccc, #333, #ccc';
+    content.appendChild(hr);
+}
 
 export default pageload;
