@@ -1,7 +1,7 @@
 import setText from './setText';
 const main = document.getElementById('main');
 
-const pageload = () => {
+function pageload() {
     configureStyle();
     createHeader();
     createMenu();
@@ -9,7 +9,11 @@ const pageload = () => {
     createFooter();
 }
 
-const createMenu = () => {
+function addContent() {
+    createParagraph('/dist/lang/homeparagraph.txt');
+}
+
+function createMenu() {
     const container = document.createElement('div');
     const menuList = document.createElement('ul');
     container.setAttribute('id', 'nav')
@@ -33,6 +37,8 @@ const createMenu = () => {
             menuList.appendChild(menuItemGroup[key]);
         } else {
             const a = document.createElement('a');
+            a.setAttribute('id', `${key}-button`);
+            a.setAttribute('class', 'nav-button');
             a.textContent = key.charAt(0).toUpperCase() + key.slice(1);
             menuItemGroup[key].appendChild(a);
             menuList.appendChild(menuItemGroup[key]);
@@ -43,7 +49,7 @@ const createMenu = () => {
     main.appendChild(container);
 }
 
-const createHeader = () => {
+function createHeader() {
     const container = document.createElement('div');
     const header = document.createElement('h1');
     container.setAttribute('id', 'header');
@@ -52,20 +58,20 @@ const createHeader = () => {
     main.appendChild(container);
 }
 
-const createFooter = () => {
+function createFooter() {
     const container = document.createElement('div');
     container.setAttribute('id', 'footer');
     container.textContent = 'Made by Dean Pooler';
     main.appendChild(container)
 }
 
-const createHorizontalRule = () => {
+function createHorizontalRule() {
     const hr = document.createElement('hr');
     hr.setAttribute('class', 'hr');
     main.appendChild(hr);
 }
 
-const createParagraph = (file) => {
+function createParagraph(file) {
     const content = document.createElement('div');
     const p = document.createElement('p');
     content.setAttribute('id', 'content');
@@ -74,7 +80,7 @@ const createParagraph = (file) => {
     main.appendChild(content);
 }
 
-const configureStyle = () => {
+function configureStyle() {
     var link = document.createElement('link');
     var stylesheet = document.createElement('link');
     stylesheet.setAttribute('rel', 'stylesheet');
@@ -85,4 +91,5 @@ const configureStyle = () => {
     document.head.appendChild(link);
     document.head.appendChild(stylesheet);
 }
-export default pageload;
+
+export { pageload, addContent };
