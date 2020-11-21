@@ -11,7 +11,6 @@ body {
     font-family: 'Dancing Script', cursive;
     background-image: linear-gradient(to right, #87eaed, #2c878a, #2c878a, #2c878a, #87eaed);
     margin-bottom: -107px;
-    
 }
 
 #header h1 {
@@ -24,6 +23,15 @@ body {
     margin: auto;
     width: 60%;
     
+}
+
+#content h1 {
+    text-align: center;
+}
+
+#content p {
+    text-align: center;
+    font-size: 25px;
 }
 
 #footer {
@@ -40,10 +48,7 @@ body {
     padding-top: 6px;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000
 }
-#content p {
-    text-align: center;
-    font-size: 25px;
-}
+
 .hr {
     border: 0;
     width: 60%;
